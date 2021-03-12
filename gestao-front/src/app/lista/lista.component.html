@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 style="font-family: 'Times New Roman', Times, serif; align-content: center;">Lista de Usuarios</h1>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Acção</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let utilizador of utilizadors">
+                <td>{{utilizador.nome}}</td>
+                <td>{{utilizador.sobreNome}}</td>
+                <td>{{utilizador.email}}</td>
+                <td>
+                    <a (click)="atualizarUtilizador(utilizador.id)" class="btn btn-light">Editar</a>
+                    <button (click)="apagarUtilizador(utilizador.id)" class="btn btn-link"
+                        style="margin-left: 5px; background-color: firebrick; color: white;">
+                        Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <div class="container">
+        <app-criar></app-criar>
+    </div>
+</div>
